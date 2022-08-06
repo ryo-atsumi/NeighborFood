@@ -4,5 +4,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('result/', views.ResultList.as_view(), name="result"),
+    path('', views.ResultList.as_view(), name="result"),
 ]
