@@ -29,7 +29,8 @@
           <th scope="col">距離</th>
           <th scope="col">価格</th>
           <th scope="col">評価</th>
-          <th scope="col">営業形態</th>
+          <th scope="col">電話番号</th>
+          <th scope="col">営業フラグ</th>
           <th scope="col">料理種類</th>
           <th scope="col">地図</th>
         </tr>
@@ -41,7 +42,8 @@
           <td>{{ result.distance }}</td>
           <td>{{ result.price|intcomma }}</td>
           <td>{{ result.review }}</td>
-          <td>{{ opening_flg }}</td>
+          <td>{{ result.phone_number }}</td>
+          <td>{{ result.opening_flg }}</td>
           <td>{{ result.type_of_cuisine }}</td>
           <td class=><a href="https://www.google.co.jp/maps?q={{ result.store_name }}" target="_blank"><img
                 src='{% static "mapicon.png" %}' class="icon"></a></td>

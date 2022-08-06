@@ -1,0 +1,13 @@
+table {
+    table-layout: fixed; 
+}
+
+.store_name_titile {
+    width: 400px;
+}
+
+img.icon {
+    width: 33px;
+    height: 33px;
+}
+
