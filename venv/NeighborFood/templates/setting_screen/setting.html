@@ -1,0 +1,59 @@
+{% load humanize %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="{% static 'setting.css' %}">
+  <title>neighborFood</title>
+</head>
+
+<body>
+  <div class="container col-m-10">
+    <h1 class="mt-5">neighborFood</h1>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <a href="opening_screen/">
+        <button type="button" class="btn btn-primary mt-5">戻る</button>
+      </a>
+    </div>
+    <h3 class="mt-1">詳細設定画面</h3>
+    <table class="table table-striped border">
+      <div>
+        <label for="distance">　　距離:</label>
+        0<input type="range" id="distance" min="0" max="100">100
+        <p>Distance</p>
+      </div>
+      <div>
+        <label for="price">　　価格:</label>
+        <input type="text" id="price">
+      </div>
+      <div>
+        <label for="review">　　評価:</label>
+        <input type="text" id="review">
+      </div>
+      <div>
+        <label for="opening_flg">営業時間:</label>
+        <input type="radio" value="指定なし" id="opening_flg" name="eigyotime"> 指定なし
+        <input type="radio" value="営業中" id="opening_flg" name="eigyotime"> 営業中
+        <input type="radio" value="24時間営業" id="opening_flg" name="eigyotime"> 24時間営業
+      </div>
+      <div>
+        <label for="type_of_cuisine">料理種類:</label>
+        <input type="text" id="type_of_cuisine">
+      </div>
+    </table>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <a href="opening_screen/">
+        <button type="button" class="btn btn-primary mt-5">登録</button>
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>
