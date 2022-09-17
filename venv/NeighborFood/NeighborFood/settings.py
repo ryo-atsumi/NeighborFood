@@ -10,6 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from dotenv import (
+    find_dotenv,
+    load_dotenv,
+)
+import dj_database_url
 from pathlib import Path
 import os
 
@@ -78,15 +83,12 @@ WSGI_APPLICATION = 'NeighborFood.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
+# Database
+# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+load_dotenv(find_dotenv())
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600),
 }
 
 
@@ -120,14 +122,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-USE_THOUSAND_SEPARATOR = True
-
 NUMBER_GROUPING = 3
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 STATIC_URL = '/static/'
 

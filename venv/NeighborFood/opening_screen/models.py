@@ -16,11 +16,11 @@ class Result(models.Model):
     store_name = models.CharField("店名",primary_key=True, unique=True,max_length=225)
     location = models.CharField("自分の位置",max_length=225)
     distance = models.IntegerField("距離",max_length=10)
-    price = models.IntegerField("価格",max_length=10)
+    price = models.CharField("価格",max_length=255)
     review = models.CharField("評価",max_length=225)
-    phone_number = models.IntegerField("電話番号",max_length=10)
-    opening_flg = models.BooleanField("営業フラグ",default=False)
-    type_of_cuisine = models.CharField("料理種類",max_length=225)
+    phone_number = models.CharField("電話番号",max_length=20)
+    opening_flg = models.CharField("営業フラグ",max_length=255)
+    type_of_cuisine = models.CharField("料理種類",max_length=255)
     
     def __str__(self):
         return self.store_name

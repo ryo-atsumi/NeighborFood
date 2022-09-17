@@ -10,4 +10,4 @@ from django.views import generic
 class ResultList(generic.ListView):
     model = Result
     template_name = 'result_screen/result_list.html'
-    paginate_by = 5 #ページング単位を指定
+    paginate_by = 10 #ページング単位を指定
