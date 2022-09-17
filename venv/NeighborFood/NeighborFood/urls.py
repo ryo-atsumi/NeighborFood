@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('result_screen/', include("result_screen.urls")),
     path('opening_screen/', include("opening_screen.urls")),
+    path('setting_screen/', include("setting_screen.urls")),
 ]
