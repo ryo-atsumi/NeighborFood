@@ -14,45 +14,37 @@
 </head>
 
 <body>
-  <div class="container col-m-10">
+  <div class="container">
     <h1 class="mt-3">NeighborFood</h1>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <a href="../opening_screen/">
-        <button type="button" class="btn btn-primary mt-5">戻る</button>
+      <a href="/">
+        <button type="button" class="btn btn-primary mt-1">戻る</button>
       </a>
     </div>
     <h3 class="mt-1">結果一覧</h3>
-    <div class="table-responsive">
-      <table class="table table-striped border text-nowrap">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col" class="store_name_titile">店名</th>
-            <th scope="col">距離</th>
-            <th scope="col">価格帯</th>
-            <th scope="col">評価</th>
-            <th scope="col">電話番号</th>
-            <th scope="col">営業時間</th>
-            <th scope="col">料理種類</th>
-          </tr>
-        </thead>
-        <tbody class="tbody">
-          {% for result in object_list %}
-          <tr>
-            <td class=><a href="https://www.google.co.jp/maps?q={{ result.store_name }}" target="_blank"><img
-                  src='{% static "mapicon.png" %}' class="icon"></a></td>
-            <td>{{ result.store_name }}</td>
-            <td>{{ result.distance }}</td>
-            <td>{{ result.price|intcomma }}</td>
-            <td>{{ result.review }}</td>
-            <td>{{ result.phone_number }}</td>
-            <td>{{ result.opening_flg }}</td>
-            <td>{{ result.type_of_cuisine }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+    <table class="table table-striped border">
+      <thead class="sticky-top bg-white">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col" class="store_name_titile">店名</th>
+          <th scope="col">価格帯</th>
+          <th scope="col" class="opentime">営業時間</th>
+          <th scope="col">料理種類</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        {% for result in object_list %}
+        <tr>
+          <td class=><a href="https://www.google.co.jp/maps?q={{ result.store_name }}" target="_blank"><img
+                src='{% static "mapicon.png" %}' class="icon"></a></td>
+          <td>{{ result.store_name }}</td>
+          <td>{{ result.price|intcomma }}</td>
+          <td>{{ result.opening_flg }}</td>
+          <td>{{ result.type_of_cuisine }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
     <!-- ページング処理 -->
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <!-- 前へ部分 -->
