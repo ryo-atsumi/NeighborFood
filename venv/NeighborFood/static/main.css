@@ -6,19 +6,23 @@
 
 .store_name_titile {
     width: 400px;
-} 
+}
 
 img.icon {
     width: 33px;
     height: 33px;
 }
 
-/* table {
-    text-size-adjust: 200px;
-} */
-
-.container{
+.container {
     margin-right: auto;
     margin-left: auto;
     max-width: 1600px;
+}
+
+td {
+    height: 150px;
+}
+
+.opentime {
+    width: 300px;
 }
